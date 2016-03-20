@@ -1,0 +1,9 @@
+{
+	"host": "ANYE0BA1KXJM6.iot.us-east-1.amazonaws.com",
+	"port": 8883,
+	"clientId": "TrexinIOT",
+	"thingName": "TrexinIOT",
+	"caCert": "root-CA.crt",
+	"clientCert": "d8c175e676-certificate.pem.crt",
+	"privateKey": "d8c175e676-private.pem.key"
+}
