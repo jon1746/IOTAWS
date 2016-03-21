@@ -22,7 +22,6 @@ var PythonShell = require('python-shell');
 
 
 
-
 //begin module
 
 function processTest(args) {
@@ -64,14 +63,18 @@ function processTest(args) {
         if (args.testMode === 1) {
         
         
-        kjj
         
         
         
-        PythonShell.run('/home/pi/aws-iot-device-sdk-js/examples/get_orientation_degrees.py',  function (err, results) {
+        
+        PythonShell.run('./examples/get_orientation_degrees.py',  function (err, results) {
   if (err) throw err;
+  
+  result=JSON.parse(results[0]); 
+  result.date=Date();
+  console.log(result);
   // results is an array consisting of messages collected during execution 
-  cdevice.publish('topic_2', JSON.stringify( results[0]));
+  device.publish('topic_2', JSON.stringify( result ));
 });
 
         
