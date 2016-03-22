@@ -71,10 +71,10 @@ function processTest(args) {
   if (err) throw err;
   
   result=JSON.parse(results[0]); 
-  result.date=Date();
-  console.log(result);
+  result.date=(new Date()).toISOString().substring(0, 19).replace('T', ' ');
+  result.device='ESN12124';
   // results is an array consisting of messages collected during execution 
-  device.publish('topic_2', JSON.stringify( result ));
+  device.publish('orientation', JSON.stringify( result ));
 });
 
         
